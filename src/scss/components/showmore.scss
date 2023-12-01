@@ -1,0 +1,45 @@
+[data-showmore-button] {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    gap: rem(10);
+    text-transform: uppercase;
+    color: #FAA;
+
+    span {
+        &:nth-child(1) {
+            display: none;
+        }
+
+        .showmore-active & {
+            display: none;
+
+            &:nth-child(1) {
+                display: block;
+            }
+        }
+    }
+
+    svg {
+        width: rem(46);
+        height: rem(46);
+        fill: #FAA;
+        transform: rotate(180deg);
+        transition: all 1s ease;
+
+        .showmore-active & {
+            transform: rotate(360deg);
+        }
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            color: $color-light-red;
+
+            svg {
+                fill: $color-light-red;
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+//========================================================================================================================================================//
+.footer {
+    @include adaptive-value("padding-top", 53, 20);
+    @include adaptive-value("padding-bottom", 53, 20);
+
+    position: relative;
+    background: url("@content/img/footer/footer.jpg") 0 0 repeat;
+
+    &__container {
+        p {
+            max-width: rem(715);
+            font-size: rem(12);
+            line-height: math.div(15, 12);
+            color: #4F4F4F;
+
+            &:not(:last-child) {
+                margin-bottom: rem(10);
+            }
+        }
+    }
+}
+
+//========================================================================================================================================================//

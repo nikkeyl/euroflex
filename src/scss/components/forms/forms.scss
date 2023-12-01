@@ -1,0 +1,106 @@
+@import "checkbox";
+@import "button";
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        line-height: rem(25);
+        color: #444;
+        transition: color 0.3s ease;
+        cursor: pointer;
+
+        .form-error & {
+            color: $color-light-red;
+        }
+    }
+
+    &__button {
+        justify-content: center;
+        margin-top: rem(15);
+    }
+
+    &__input {
+        border-radius: rem(2);
+        padding: rem(7) rem(10);
+        box-shadow: inset rem(1) rem(1) rem(4) rgb(0 0 0 / 12%);
+        background: #EEF;
+        transition: all 0.3s ease;
+
+        &::placeholder {
+            text-transform: capitalize;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+}
+
+.payment {
+    @include adaptive-value("padding-top", 50, 20);
+    @include adaptive-value("padding-right", 65, 10);
+    @include adaptive-value("padding-left", 65, 10);
+
+    border-radius: rem(2);
+    padding-bottom: rem(20);
+    max-width: rem(430);
+    box-shadow: 0 rem(4) rem(16) rgb(0 0 0 / 16%), 0 rem(2) rem(4) rgb(0 0 0 / 24%);
+    background-color: $color-light;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: rem(23);
+        line-height: math.div(32, 23);
+        color: #444;
+
+        &:not(:last-child) {
+            margin-bottom: rem(29);
+        }
+    }
+
+    &__warning {
+        font-size: rem(14);
+        line-height: math.div(18, 14);
+        color: #8AC;
+
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__form {
+        &:not(:last-child) {
+            margin-bottom: rem(20);
+        }
+    }
+
+    &__confidentiality {
+        display: flex;
+        align-items: center;
+        align-self: center;
+        gap: rem(10);
+    }
+
+    &__icon {
+        @include wh(rem(16), rem(16));
+
+        fill: #BBC;
+    }
+
+    &__link {
+        font-size: rem(10);
+        line-height: math.div(12, 10);
+        color: #BBC;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}

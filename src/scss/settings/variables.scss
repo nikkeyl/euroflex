@@ -1,0 +1,26 @@
+$max-width-container    : 1180;
+$container-padding      : 30;
+//---------------------------------//
+$max-width              : 1680;
+$min-width              : 320;
+//---------------------------------//
+$container-width        : $max-width-container + $container-padding;
+$pc                     : $container-width;
+$tablet                 : 992;
+$mobile                 : 768;
+$mobile-small           : 480;
+//---------------------------------//
+$main-font-family       : 'Roboto';
+$main-font-weight       : 400;
+$main-font-size         : 16;
+$main-background-color  :#FFF;
+$main-font-color        :#666;
+$a-focus-active-outline : 0;
+$focus-active-outline   : 1;
+//---------------------------------//
+$color-dark             :#000;
+$color-light            :#FFF;
+$color-purple           :#80F;
+$color-yellow           :#FE0;
+$color-gray             :#666;
+$color-light-red        :#F55;

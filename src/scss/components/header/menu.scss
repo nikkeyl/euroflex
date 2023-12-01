@@ -1,0 +1,96 @@
+.menu {
+    &__body {
+        @media (max-width: md($mobile)) {
+            @include wh(100%, 100%);
+
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 4;
+            overflow: auto;
+            padding-top: rem(120);
+            background-color: $color-light;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+
+            &::before {
+                @include pseudo($display-on: 0, $position: fixed);
+
+                // height: rem(70);
+                @include adaptive-value("height", 80.88, 51, 768, 320,1);
+
+                left: 0;
+                top: 0;
+                z-index: 2;
+                width: 100%;
+                background-color: $color-light;
+            }
+
+            .menu-open & {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+
+    &__link {
+        position: relative;
+        padding: rem(5) 0;
+        line-height: math.div(25, 16);
+        color: #222;
+        transition: all 0.3s ease;
+
+        &::after {
+            @include pseudo;
+
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: rem(0.25);
+            background-color: #BBC;
+            transition: all 0.3s ease 0s;
+        }
+
+        &.navigator-active {
+            color: $color-light-red;
+
+            &::after {
+                height: rem(5);
+                background-color: $color-light-red;
+            }
+        }
+
+        @media (max-width: md($mobile)) {
+            $font-size: 20;
+
+            font-size: rem($font-size);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $color-light-red;
+
+                &::after {
+                    height: rem(5);
+                    background-color: $color-light-red;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        column-gap: rem(26);
+        row-gap: rem(10);
+        padding: 0 rem(15);
+
+        @media (max-width: md($mobile)) {
+            flex-direction: column;
+            align-items: flex-end;
+            row-gap: rem(20);
+        }
+    }
+}

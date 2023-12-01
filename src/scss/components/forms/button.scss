@@ -1,0 +1,49 @@
+.button {
+    display: inline-flex;
+    border-radius: rem(2);
+    padding: rem(15) rem(30);
+    font-size: rem(14);
+    line-height: math.div(16, 14);
+    letter-spacing: 0.04em;
+    text-align: center;
+    text-transform: uppercase;
+    color: #EEE;
+    background-color: $color-light-red;
+    transition: all 0.3s ease;
+
+    &:focus {
+        border-radius: rem(2);
+        box-shadow: 0 rem(4) rem(16) rgb(0 0 0 / 16%), 0 rem(2) rem(4) rgb(0 0 0 / 24%);
+    }
+
+    &:active {
+        transform: translateY(rem(3));
+    }
+
+    &--small {
+        padding: rem(4) rem(15);
+        line-height: math.div(18, 14);
+        text-transform: none;
+        color: $color-light;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+    }
+
+    &--big {
+        border: rem(2) solid #FFAEAE;
+        border-radius: rem(5);
+        font-weight: 700;
+        line-height: math.div(22, 14);
+        color: $color-light-red;
+        background-color: $color-light;
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            border-radius: rem(2);
+            box-shadow: 0 rem(4) rem(16) rgb(0 0 0 / 16%), 0 rem(2) rem(4) rgb(0 0 0 / 24%);
+        }
+    }
+}

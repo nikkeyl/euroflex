@@ -1,0 +1,213 @@
+//========================================================================================================================================================//
+.title {
+    max-width: rem(540);
+    font-weight: 500;
+    font-size: rem(32);
+    line-height: math.div(38, 32);
+    text-align: center;
+
+    &--white {
+        color: $color-light;
+    }
+}
+
+//========================================================================================================================================================//
+.advantage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(20);
+
+    &__icon {
+        img {
+            @include wh(rem(90), rem(90));
+        }
+    }
+
+    &__text {
+        font-size: rem(14);
+        line-height: math.div(18, 14);
+        text-align: center;
+        text-transform: uppercase;
+        color: #444;
+    }
+}
+
+//========================================================================================================================================================//
+.opportunity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(20);
+    max-width: rem(280);
+
+    &__icon {
+        img {
+            @include wh(rem(90), rem(90));
+
+            border-radius: 50%;
+        }
+    }
+
+    &__text {
+        line-height: math.div(23, 16);
+        letter-spacing: 0.04em;
+        text-align: center;
+        text-transform: uppercase;
+        color: #444;
+    }
+}
+
+//========================================================================================================================================================//
+.success {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: rem(10);
+
+    &__title {
+        display: flex;
+        align-items: flex-end;
+        gap: rem(12);
+        font-weight: 700;
+        font-size: rem(28);
+        line-height: math.div(33, 28);
+        color: $color-light-red;
+
+        span {
+            margin-bottom: rem(-4.5);
+            font-size: rem(50);
+            line-height: math.div(59, 50);
+        }
+    }
+
+    &__text {
+        font-size: rem(14);
+        line-height: math.div(18, 14);
+    }
+
+    @media (max-width: md($mobile-small)) {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+//========================================================================================================================================================//
+.package {
+    position: relative;
+    overflow: hidden;
+    border-radius: rem(5);
+    max-width: rem(273);
+    box-shadow: 0 rem(4) rem(16) rgb(0 0 0 / 16%), 0 rem(2) rem(4) rgb(0 0 0 / 24%);
+    background: #FFF;
+
+    &__image-ibg {
+        padding-bottom: percent(260, 273);
+
+        img {
+            opacity: 0.15;
+        }
+    }
+
+    &__body {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: rem(25) rem(22);
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: rem(18);
+        line-height: math.div(26, 18);
+        letter-spacing: 0.04em;
+        text-align: center;
+        text-transform: uppercase;
+
+        &:not(:last-child) {
+            margin-bottom: rem(30);
+        }
+    }
+
+    &__list {
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: center;
+        padding-left: rem(25);
+        font-size: rem(12);
+        line-height: math.div(15, 12);
+
+        &::before {
+            @include pseudo;
+
+            left: 0;
+            top: rem(2);
+            border-radius: 50%;
+            width: rem(10);
+            height: rem(10);
+            background-color: rgb(255 174 174 / 80%);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(10);
+        }
+    }
+}
+
+//========================================================================================================================================================//
+.tab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(33);
+    padding: rem(24) rem(18);
+    max-width: rem(191);
+    background-color: $color-light;
+    transition: all 0.3s ease;
+
+    &__image-ibg {
+        @include wh(rem(42), rem(64));
+    }
+
+    &__title {
+        font-weight: 700;
+        line-height: math.div(23, 16);
+        letter-spacing: 0.04em;
+        text-align: center;
+        text-decoration: underline;
+        text-transform: uppercase;
+
+        .tab-active & {
+            text-decoration: none;
+        }
+    }
+
+    &.tab-active {
+        border-radius: rem(4);
+        box-shadow: inset rem(1) rem(1) rem(4) rgb(0 0 0 / 15%);
+        background: #FAFAFA;
+    }
+
+    @media (max-width: md($mobile)) {
+        gap: rem(10);
+        margin: 0 rem(15);
+        padding: rem(15) rem(10);
+    }
+
+    @media (max-width: md($mobile-small)) {
+        max-width: 100%;
+    }
+}

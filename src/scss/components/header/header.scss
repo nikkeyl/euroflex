@@ -1,0 +1,95 @@
+@import "./menu";
+@import "./icon-menu";
+
+//HEADER========================================================================================================================================================//
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 90;
+    padding: rem(10) 0;
+    width: 100%;
+    transition: all 0.3s ease;
+
+    &__container {
+        // min-height: rem(58 + 17 + 17);
+        @include adaptive-value("min-height", 58 + 17 + 17, 30);
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__logo {
+        flex: 1 0 auto;
+
+        @media (min-width: em(380)) {
+            position: relative;
+
+            &::after {
+                @include pseudo("федеральный производитель упаковки");
+
+                left: rem(53);
+                top: rem(30);
+                font-size: rem(12);
+                line-height: math.div(17, 12);
+                color: #4F4F4F;
+            }
+        }
+    }
+
+    &__menu {
+        &:not(:last-child) {
+            @include adaptive-value("margin-right", 90, 30, 1680, 768, 1);
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: rem(15);
+    }
+
+    &__callback {
+        display: flex;
+        flex: 0 0 rem(157);
+        flex-direction: column;
+        align-items: flex-end;
+        gap: rem(10);
+    }
+
+    &__phone {
+        font-weight: 500;
+        font-size: rem(18);
+        line-height: math.div(21, 18);
+        white-space: nowrap;
+        color: #444;
+        transition: color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $color-light-red;
+            }
+        }
+    }
+
+    &__button {
+        @media (max-width: md($mobile)) {
+            display: none;
+        }
+    }
+
+    &.header-scroll {
+        background-color: $color-light;
+    }
+
+    .lock & {
+        transition: none;
+    }
+}
+
+.logo {
+    img {
+        height: rem(31);
+        max-width: 100%;
+    }
+}

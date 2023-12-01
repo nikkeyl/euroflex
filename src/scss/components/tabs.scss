@@ -1,0 +1,44 @@
+.tabs {
+    &__navigation {
+        @include adaptive-value("gap", 120, 20);
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        &:not(:last-child) {
+            @include adaptive-value("margin-bottom", 61, 20);
+        }
+
+        @media (max-width: md($mobile)) {
+            padding: 0 rem(15);
+        }
+    }
+
+    &__title {
+        cursor: pointer;
+    }
+
+    &__content {
+        @media (max-width: md(600)) {
+            display: flex;
+            flex-direction: column;
+            gap: rem(20);
+        }
+    }
+
+    &__inner {
+        display: flex;
+        gap: rem(58);
+        min-width: 0;
+
+        @media (max-width: md($mobile)) {
+            gap: rem(20);
+        }
+    }
+
+    &__slider {
+        margin: rem(-30);
+        padding: rem(30);
+    }
+}
